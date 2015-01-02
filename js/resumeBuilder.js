@@ -12,12 +12,14 @@ var bio = {
   'skills': ['html', 'css', 'javascript', 'asp.net mvc', 'nodejs', 'mongodb', 'hapijs', 'android'],
   'biopic': '',
   'display': function() {
-    $('#topName').append(this.name);
-    $('#topRole').append(this.role);
-    $('#welcomeMessage').append(this.welcomeMessage);
+    $('#topName').append(HTMLheaderName.replace('%data%', this.name));
+    $('#topRole').append(HTMLheaderRole.replace('%data%', this.role));
+    $('#welcomeMessage').append(HTMLwelcomeMsg.replace('%data%',this.welcomeMessage));
+    var skillsHTML = HTMLskillsStart;
     for(var skill in bio.skills) {
-      $('#topSkills').append('<div>' + this.skills[skill] + '</div>');
+      skillsHTML += HTMLskills.replace('%data%', bio.skills[skill]);
     }
+    skillsHTML = skillsHTML + HTMLskillsEnd;
     var HTMLcontacts = '<li><span class="orange-text">mobile</span><span class="white-text">' + this.contacts[0].mobile + '</span></li>' + '<li><span class="orange-text">email</span><span class="white-text">' + this.contacts[0].email + '</span></li>' + '<li><span class="orange-text">github</span><span class="white-text">' + this.contacts[0].github + '</span></li>' + '<li><span class="orange-text">twitter</span><span class="white-text">' + this.contacts[0].twitter + '</span></li>' + '<li><span class="orange-text">location</span><span class="white-text">' + this.contacts[0].location + '</span></li>';
     $('#topContacts').append(HTMLcontacts);
     $('#footerContacts').append(HTMLcontacts);

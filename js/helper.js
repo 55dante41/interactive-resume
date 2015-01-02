@@ -13,8 +13,9 @@ var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</sp
 var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLWelcomeMsg = '<span class="welcome-message">%data%</span>';
 
-var HTMLskillsStart = '<h3 id="skillsH3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
+var HTMLskillsStart = '<h3 id="skillsH3">Skills at a Glance:</h3><ul id="skills" class="flex-box">';
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
+var HTMLskillsEnd = '</ul>';
 
 var HTMLworkStart = '<div class="work-entry">';
 var HTMLworkEmployer = '<a href="#">%data%';
@@ -83,7 +84,7 @@ function initializeMap() {
   };
 
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
-  
+
   /*
   locationFinder() returns an array of every location string from the JSONs
   written for bio, education, and work.
