@@ -72,32 +72,38 @@ var work = {
 var projects = {
   'projects': [{
     'title': 'chatsy',
+    'url': 'http://chatsy-alpha.herokuapp.com',
     'dates': 'Oct 2014 - Present',
     'description': 'A simple but flexible group based chat application for web and android',
     'images': []
   }, {
     'title': 'Traffic Hell',
+    'url': 'http://devmaestro.github.io/games/survive/index.html',
     'dates': 'Dec 2014 - Present',
     'description': 'A HTML5 game (partial clone of FROGGER) made using pure javascript',
     'images': []
   }, {
     'title': 'BPO Job Search',
+    'url': '',
     'dates': 'Jun 2014 - Aug 2014',
     'description': 'An android application for Call-center job search using babajob\'s API',
     'images': []
   }, {
     'title': 'TnP Lite',
+    'url': '',
     'dates': 'Jun 2013 -  Dec 2013',
     'description': 'An android application for the Training and Placement Notification for the campus of IIT Kharagpur',
     'images': []
   }],
   'display': function() {
     for(var project in this.projects) {
-      var entryProjectTitle = HTMLprojectTitle.replace('%data%', this.projects[project].title);
+      var entryProjectTitleLinkStart = HTMLprojectLinkStart.replace('%data%', this.projects[project].url);
+      var entryProjectTitle = HTMLprojectLinkTitle.replace('%data%', this.projects[project].title);
       var entryProjectDates = HTMLprojectDates.replace('%data%', this.projects[project].dates);
       var entryProjectDescription = HTMLprojectDescription.replace('%data%', this.projects[project].description);
       var entryProjectImage = HTMLprojectImage.replace('%data%', this.projects[project].image);
-      $('#projects').append(HTMLprojectStart + entryProjectTitle + entryProjectDates + entryProjectDescription + entryProjectImage + HTMLprojectEnd);
+      $('#projects').append(HTMLprojectStart + entryProjectTitleLinkStart + entryProjectTitle +
+        HTMLprojectLinkEnd + entryProjectDates + entryProjectDescription + entryProjectImage + HTMLprojectEnd);
     }
   }
 };
