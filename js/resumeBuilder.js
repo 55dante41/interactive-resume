@@ -12,8 +12,8 @@ var bio = {
   'skills': ['html', 'css', 'javascript', 'asp.net mvc', 'nodejs', 'mongodb', 'hapijs', 'android'],
   'biopic': '',
   'display': function() {
-    $('#topName').append(HTMLheaderName.replace('%data%', this.name));
-    $('#topRole').append(HTMLheaderRole.replace('%data%', this.role));
+    $('#header').prepend(HTMLheaderRole.replace('%data%', this.role));
+    $('#header').prepend(HTMLheaderName.replace('%data%', this.name));
     $('#welcomeMessage').append(HTMLWelcomeMsg.replace('%data%',this.welcomeMessage));
     var skillsHTML = HTMLskillsStart;
     for(var skill in bio.skills) {
