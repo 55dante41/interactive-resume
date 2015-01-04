@@ -13,6 +13,10 @@
   padding-right: 5%;
 }
 
+.screenshot-image {
+  height: 200px;
+}
+
 h1 {
   font-size: 40px;
   color: #F5A623;

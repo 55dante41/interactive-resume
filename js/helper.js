@@ -31,7 +31,7 @@ var HTMLprojectLinkTitle = '%data%';
 var HTMLprojectLinkEnd = '</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img src="%data%">';
+var HTMLprojectImage = '<img class="screenshot-image" src="%data%">';
 var HTMLprojectEnd = '</div>';
 
 var HTMLschoolStart = '<div class="education-entry">';

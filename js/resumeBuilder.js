@@ -90,10 +90,10 @@ var projects = {
     'images': []
   }, {
     'title': 'TnP Lite',
-    'url': '',
-    'dates': 'Jun 2013 -  Dec 2013',
+    'url': 'https://play.google.com/store/apps/details?id=com.limelitesolutions.tnplite',
+    'dates': 'Jun 2013 -  Aug 2013',
     'description': 'An android application for the Training and Placement Notification for the campus of IIT Kharagpur',
-    'images': []
+    'images': ['proj1-1.png', 'proj1-2.png', 'proj1-3.png', 'proj1-4.png']
   }],
   'display': function() {
     for(var project in this.projects) {
@@ -101,9 +101,13 @@ var projects = {
       var entryProjectTitle = HTMLprojectLinkTitle.replace('%data%', this.projects[project].title);
       var entryProjectDates = HTMLprojectDates.replace('%data%', this.projects[project].dates);
       var entryProjectDescription = HTMLprojectDescription.replace('%data%', this.projects[project].description);
-      var entryProjectImage = HTMLprojectImage.replace('%data%', this.projects[project].image);
+      var entryProjectImages = '';
+      for(var image in this.projects[project].images) {
+        var entryProjectImage = HTMLprojectImage.replace('%data%', '/images/'+this.projects[project].images[image]);
+        entryProjectImages += entryProjectImage;
+    }
       $('#projects').append(HTMLprojectStart + entryProjectTitleLinkStart + entryProjectTitle +
-        HTMLprojectLinkEnd + entryProjectDates + entryProjectDescription + entryProjectImage + HTMLprojectEnd);
+        HTMLprojectLinkEnd + entryProjectDates + entryProjectDescription + entryProjectImages + HTMLprojectEnd);
     }
   }
 };
