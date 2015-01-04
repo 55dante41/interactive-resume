@@ -18,7 +18,7 @@ var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></
 var HTMLskillsEnd = '</ul>';
 
 var HTMLworkStart = '<div class="work-entry">';
-var HTMLworkEmployer = '<a href="#">%data%';
+var HTMLworkEmployer = '<a target="_blank" href="#">%data%';
 var HTMLworkTitle = ' - %data%</a>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
@@ -26,7 +26,7 @@ var HTMLworkDescription = '<p><br>%data%</p>';
 var HTMLworkEnd = '</div>';
 
 var HTMLprojectStart = '<div class="project-entry">';
-var HTMLprojectLinkStart = '<a href="%data%">'
+var HTMLprojectLinkStart = '<a target="_blank" href="%data%">'
 var HTMLprojectLinkTitle = '%data%';
 var HTMLprojectLinkEnd = '</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
@@ -35,7 +35,7 @@ var HTMLprojectImage = '<img class="screenshot-image" src="%data%">';
 var HTMLprojectEnd = '</div>';
 
 var HTMLschoolStart = '<div class="education-entry">';
-var HTMLschoolName = '<a href="#">%data%';
+var HTMLschoolName = '<a target="_blank" href="#">%data%';
 var HTMLschoolDegree = ' -- %data%</a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
@@ -43,10 +43,10 @@ var HTMLschoolMajor = '<em><br>Major: %data%</em>';
 var HTMLschoolEnd = '</div>';
 
 var HTMLonlineClasses = '<h3>Online Classes</h3>';
-var HTMLonlineTitle = '<a href="#">%data%';
+var HTMLonlineTitle = '<a target="_blank" href="#">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<br><a href="#">%data%</a>';
+var HTMLonlineURL = '<br><a target="_blank" href="#">%data%</a>';
 
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
