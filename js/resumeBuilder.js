@@ -82,7 +82,7 @@ var projects = {
     'url': 'http://devmaestro.github.io/games/survive/index.html',
     'dates': 'Dec 2014 - Present',
     'description': 'A HTML5 game (partial clone of FROGGER) made using pure javascript',
-    'images': []
+    'images': ['proj3-1.png']
   }, {
     'title': 'BPO Job Search',
     'url': 'https://play.google.com/store/apps/details?id=com.babajob.app&hl=en',
