@@ -10,10 +10,11 @@ var bio = {
   }],
   'welcomeMessage': 'Hello!',
   'skills': ['html', 'css', 'javascript', 'asp.net mvc', 'nodejs', 'mongodb', 'hapijs', 'android'],
-  'biopic': '',
+  'biopic': 'fry.jpg',
   'display': function() {
     $('#header').prepend(HTMLheaderRole.replace('%data%', this.role));
     $('#header').prepend(HTMLheaderName.replace('%data%', this.name));
+    $('#topBio').prepend(HTMLbioPic.replace('%data%', '/images/'+this.biopic));
     $('#welcomeMessage').append(HTMLWelcomeMsg.replace('%data%',this.welcomeMessage));
     var skillsHTML = HTMLskillsStart;
     for(var skill in bio.skills) {
