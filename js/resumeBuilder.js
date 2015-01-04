@@ -84,15 +84,16 @@ var projects = {
     'images': []
   }, {
     'title': 'BPO Job Search',
-    'url': '',
+    'url': 'https://play.google.com/store/apps/details?id=com.babajob.app&hl=en',
     'dates': 'Jun 2014 - Aug 2014',
     'description': 'An android application for Call-center job search using babajob\'s API',
-    'images': []
+    'images': ['proj2-1.png', 'proj2-2.png', 'proj2-3.png', 'proj2-4.png']
   }, {
     'title': 'TnP Lite',
     'url': 'https://play.google.com/store/apps/details?id=com.limelitesolutions.tnplite',
     'dates': 'Jun 2013 -  Aug 2013',
-    'description': 'An android application for the Training and Placement Notification for the campus of IIT Kharagpur',
+    'description': 'An android application developed for the students of IIT Kharagpur facilitating them to Browse ' +
+    'through, Get instant notificiations and Search for Training and Placement Notices, anywhere in the campus',
     'images': ['proj1-1.png', 'proj1-2.png', 'proj1-3.png', 'proj1-4.png']
   }],
   'display': function() {
