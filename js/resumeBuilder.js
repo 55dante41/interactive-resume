@@ -107,7 +107,7 @@ var projects = {
       for(var image in this.projects[project].images) {
         var entryProjectImage = HTMLprojectImage.replace('%data%', '/images/'+this.projects[project].images[image]);
         entryProjectImages += entryProjectImage;
-    }
+      }
       $('#projects').append(HTMLprojectStart + entryProjectTitleLinkStart + entryProjectTitle +
         HTMLprojectLinkEnd + entryProjectDates + entryProjectDescription + entryProjectImages + HTMLprojectEnd);
     }
