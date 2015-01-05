@@ -77,6 +77,9 @@ var work = {
     'description': ''
   }],
   'display': function() {
+    this.displayWorkExperience();
+  },
+  'displayWorkExperience': function() {
     for(var job in this.jobs) {
       var entryWorkEmployer = HTMLworkEmployer.replace('%data%', this.jobs[job].employer);
       var entryWorkTitle = HTMLworkTitle.replace('%data%', this.jobs[job].title);
@@ -115,28 +118,39 @@ var projects = {
     'images': ['proj1-1.png', 'proj1-2.png', 'proj1-3.png', 'proj1-4.png']
   }],
   'display': function() {
+    this.displayProjects();
+  },
+  'displayImagesInProject': function(project) {
+    var entryProjectImages = '';
+    if(project != undefined && project.images != undefined) {
+      for(var image in project.images) {
+        var entryProjectImage = HTMLprojectImage.replace('%data%', '/images/' + project.images[image]);
+        entryProjectImages += entryProjectImage;
+      }
+    }
+    return entryProjectImages;
+  },
+  'displayProjects': function() {
     for(var project in this.projects) {
       var entryProjectTitleLinkStart = HTMLprojectLinkStart.replace('%data%', this.projects[project].url);
       var entryProjectTitle = HTMLprojectLinkTitle.replace('%data%', this.projects[project].title);
       var entryProjectDates = HTMLprojectDates.replace('%data%', this.projects[project].dates);
       var entryProjectDescription = HTMLprojectDescription.replace('%data%', this.projects[project].description);
-      var entryProjectImages = '';
-      for(var image in this.projects[project].images) {
-        var entryProjectImage = HTMLprojectImage.replace('%data%', '/images/'+this.projects[project].images[image]);
-        entryProjectImages += entryProjectImage;
-      }
+      var entryProjectImages = this.displayImagesInProject(this.projects[project]);
       $('#projects').append(HTMLprojectStart + entryProjectTitleLinkStart + entryProjectTitle +
         HTMLprojectLinkEnd + entryProjectDates + entryProjectDescription + entryProjectImages + HTMLprojectEnd);
     }
   }
 };
-
 var addMap = function() {
   $('#mapDiv').append(googleMap);
 }
+var buildResume = function() {
+  bio.display();
+  education.display();
+  projects.display();
+  work.display();
+  addMap();
+}
 
-bio.display();
-education.display();
-projects.display();
-work.display();
-addMap();
+buildResume();
