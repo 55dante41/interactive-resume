@@ -12,19 +12,34 @@ var bio = {
   'skills': ['html', 'css', 'javascript', 'asp.net mvc', 'nodejs', 'mongodb', 'hapijs', 'android'],
   'biopic': 'fry.jpg',
   'display': function() {
+    this.displayHeader();
+    this.displayBioPic();
+    this.displayWelcomeMessage();
+    this.displaySkills();
+    this.displayContacts();
+  },
+  'displayHeader': function() {
     $('#header').prepend(HTMLheaderRole.replace('%data%', this.role));
     $('#header').prepend(HTMLheaderName.replace('%data%', this.name));
-    $('#topBio').prepend(HTMLbioPic.replace('%data%', '/images/'+this.biopic));
+  },
+  'displayContacts': function() {
+    var HTMLcontacts = '<li><span class="orange-text">mobile</span><span class="white-text">' + this.contacts[0].mobile + '</span></li>' + '<li><span class="orange-text">email</span><span class="white-text">' + this.contacts[0].email + '</span></li>' + '<li><span class="orange-text">github</span><span class="white-text">' + this.contacts[0].github + '</span></li>' + '<li><span class="orange-text">twitter</span><span class="white-text">' + this.contacts[0].twitter + '</span></li>' + '<li><span class="orange-text">location</span><span class="white-text">' + this.contacts[0].location + '</span></li>';
+    $('#topContacts').append(HTMLcontacts);
+    $('#footerContacts').append(HTMLcontacts);
+  },
+  'displayWelcomeMessage': function() {
     $('#welcomeMessage').append(HTMLWelcomeMsg.replace('%data%',this.welcomeMessage));
+  },
+  'displayBioPic': function() {
+    $('#topBio').prepend(HTMLbioPic.replace('%data%', '/images/'+this.biopic));
+  },
+  'displaySkills': function() {
     var skillsHTML = HTMLskillsStart;
     for(var skill in bio.skills) {
       skillsHTML += HTMLskills.replace('%data%', bio.skills[skill]);
     }
     skillsHTML = skillsHTML + HTMLskillsEnd;
     $('#topSkills').append(skillsHTML);
-    var HTMLcontacts = '<li><span class="orange-text">mobile</span><span class="white-text">' + this.contacts[0].mobile + '</span></li>' + '<li><span class="orange-text">email</span><span class="white-text">' + this.contacts[0].email + '</span></li>' + '<li><span class="orange-text">github</span><span class="white-text">' + this.contacts[0].github + '</span></li>' + '<li><span class="orange-text">twitter</span><span class="white-text">' + this.contacts[0].twitter + '</span></li>' + '<li><span class="orange-text">location</span><span class="white-text">' + this.contacts[0].location + '</span></li>';
-    $('#topContacts').append(HTMLcontacts);
-    $('#footerContacts').append(HTMLcontacts);
   }
 };
 var education = {
